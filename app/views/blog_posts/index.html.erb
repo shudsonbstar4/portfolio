@@ -1,0 +1,19 @@
+<div class="row"><br /></div>
+<div class="row text-center">
+	<div class="col-md-3 sidebar">
+		<h4>Older posts</h4>
+		<hr />
+		<% @blog_posts.each do |blog| %>
+			<%= link_to blog.title, blog_posts_index_path %>
+		<% end %>
+	</div>
+	<div class="col-md-1">&nbsp;</div>
+	<div class="col-md-8 text center">
+		<% @blog_posts.each do |blog| %>
+				<div class="row"><h3><%= blog.title %></h3></div>
+				<div class="row"><%= blog.created_at.strftime('%m/%d/%Y %H:%M') %></div>
+				<div class="row"><%= blog.content %></div>
+				<div class="row"><hr /></div>
+		<% end %>
+	</div><!-- COL MD 8-->
+</div> <!--END ROW-->
