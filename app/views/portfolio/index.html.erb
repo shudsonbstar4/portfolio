@@ -7,60 +7,33 @@
 		<h1>Featured Projects</h1>
 		<p>My portfolio site is still under construction, but while I finish up, feel free to glance over my featured projects!</p>
 	</div>
-	<div class="row">
-		
-		<div class="col-md-4">
-			<div class="thumbnail">
-				<a href="http://www.holcombeorganics.com/" target="_new"><img src="assets/MHC-mockup-home.jpg" alt="Holcombe Organics" /></a>
-			</div>
-		</div>
-		
-		<div class="col-md-4">
-			<div class="thumbnail">
-				<a href="http://dtel.myshopify.com/" target="_new"><img src="assets/DTel-mockup-home.jpg" alt="DTel Telecommunications" /></a>
-			</div>
-		</div>
-		
-		<div class="col-md-4">
-			<div class="thumbnail">
-				<img src="assets/flygirl-mockup-home.jpg" alt="FlyGirl" />
-			</div>
-		</div>
-		
-		
-	</div>
 
-	<div class="row">
-			&nbsp;
-		</div>
-		
+			
 	<div class="row">
 		
-		<div class="col-md-4">
-			<div class="thumbnail">
-				<a href="http://www.klaspet.com" target="_new"><img src="assets/klaspet-mockup-home.jpg" alt="Klaspet" /></a>
-			</div>
-		</div>
+		<% @projects.each do |project| %>
+			<% if project.featured.to_s == "true" %>
+				<div class="col-md-4 project">
+					<div class="thumbnail">
+						<%= image_tag project.photo.url %> <!-- NEEDS TO BE A LINK -->
+					</div><!--THUMBNAIL-->
+						<br />
+						<div class="row text-center"><h3><%= link_to project.title, project %><h3></div>
+						<div class="row text-center"><%= project.description %></div>	
+						<br />
+				</div><!--end column-->
+			<% end %>
+		<% end %>
 		
-		<div class="col-md-4">
-			<div class="thumbnail">
-				<img src="assets/cck-mockup-home.jpg" alt="Carolina Commercial Kitchen" />
-			</div>
-		</div>
+	</div> <!--END ROW-->
 		
-		<div class="col-md-4">
-			<div class="thumbnail">
-				<img src="assets/Inventors-Digest-probono.jpg" alt="Inventor's Digest Probono" />
-			</div>
-		</div>
-		
-
-		
-	<div class="row text-center">
+<div class="row text-center">
 		<button class="btn btn-info construction">View More</button>
 		<p class="msg">This section is still under construction!</p>
 	</div>
-</div>
+
+
+
 
 	<div class="row">
 	<h1>Categories</h1>
@@ -74,28 +47,29 @@
 	
 		<div class="col-md-3">
 			<div class="categories text-center" id="web">
-				<img src="assets/mac.png" alt="Web"/>
+				<%= image_tag "mac.png", :alt => 'Web' %>
 			</div>
 			<h2>Web.</h2>
 		</div>
 		
-				<div class="col-md-3">
+		<div class="col-md-3">
 			<div class="overlay">
 			<div class="categories text-center" id="design">
-				<img src="assets/news.png" alt="Graphic Design"/>
+				<%= image_tag "news.png", :alt => 'Graphic Design' %>
 			</div>
 			</div> <!--overlay-->
 			<h2>Design.</h2>
 		</div>
 		
-				<div class="col-md-3">
+		<div class="col-md-3">
 			<div class="categories text-center" id="writing">
-				<img src="assets/pen.png" alt="Writing"/>
+				<%= image_tag "pen.png", :alt => 'Writing' %>
 			</div>
 			<h2>Articles.</h2>
 		</div>
 		
-		<div class="col-md-1">
-		</div>
+	<div class="col-md-1">
 	</div>
-		
+
+	
+	</div> <!--ROW-->

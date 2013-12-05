@@ -6,4 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-categories = Category.create([{ name: 'Web'}, { name: 'Graphic'}, { name: 'Writing'}])
+categories = Category.create!([{ name: 'Web' }, { name: 'Graphic' }, { name: 'Writing' }])
+subcategories = Subcategory.create!([{ name: 'eCommerce', category_id: 1 }, { name: 'Web Apps', category_id: 1 }, { name: 'Templates', category_id: 1 }, { name: 'Static Sites', category_id: 1 }])

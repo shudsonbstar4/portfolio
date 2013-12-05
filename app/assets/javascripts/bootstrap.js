@@ -2005,17 +2005,6 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 // ACTIVE LINK
 
 
-//ZOOM IMAGE ON HOVER
-
-$('#zoom').mouseenter(function() {
-    $(this).css("cursor","pointer");
-    $(this).animate({width: "100%", height: "100%"}, 'slow');
-});
-
-$('#zoom').mouseleave(function() {   
-    $(this).animate({width: "33.333333333%"}, 'slow');
-});
-
 //CONSTRUCTION MSG
 
 $(document).ready(function(){

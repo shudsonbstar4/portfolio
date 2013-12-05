@@ -5,6 +5,8 @@ class ProjectsController < ApplicationController
 	
   def index
     @projects = Project.all
+		@subcategory = Subcategory.all
+		@category = Category.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,6 +18,8 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @project = Project.find(params[:id])
+		#@subcategory = Subcategory.find(params[:id])
+		#@category = Subcategory.find(params[:category_id])
 
     respond_to do |format|
       format.html # show.html.erb

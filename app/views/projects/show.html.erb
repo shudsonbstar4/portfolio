@@ -1,31 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag @project.photo.url %>
-<%= image_tag @project.photo.url(:medium) %>
-<%= image_tag @project.photo.url(:thumb) %>
+<div class="row">
+	<h2><%= @project.title %></h2>
+	<br />
+	<div class="col-md-12 project">
+	<%= image_tag @project.photo.url %>
+	</div>
+</div>
 
 <p>
-  <b>Subcategory:</b>
-  <%= @project.subcategory_id %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @project.category_id %>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%= @project.title %>
-</p>
-
-
-
-<p>
-  <b>Description:</b>
   <%= @project.description %>
 </p>
 
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Back', portfolio_index_path %>

@@ -7223,6 +7223,10 @@ td.visible-print {
 	padding:1em;
 }
 
+.project img {
+	width:100%;
+}
+
 /* 
 yellow: fff68e
 pink: dd3ed4
